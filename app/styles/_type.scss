@@ -1,0 +1,159 @@
+html {
+    font-family: "GT Pressura", Helvetica, Arial, sans-serif; 
+}
+
+body{
+    font-size: 15px;
+}
+.Text{
+    &__regular{
+        font-weight: 300;
+    }
+    
+    &__light{
+        font-weight: 100;
+    }
+    
+    &__bold{
+        font-weight: 700;
+    }
+
+    &__color{
+        &Grey{
+            color: $textGrey;
+        }
+        &White{
+            color: white;
+        }
+        &Blue{
+            color: $blue;
+        }
+    }
+
+    &__size30{
+        font-size: 1.8rem;
+        line-height: 2.3rem;
+
+        @include forsize(mediumsmall){
+            font-size: 1.6rem;
+            line-height: 2.1rem;
+        }
+        @include forsize(small){
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+    }
+    
+    &__size40{
+        font-size: 2.4rem;
+        line-height: 2.7rem;
+        
+        @include forsize(mediumsmall){
+            font-size: 2.2rem;
+            line-height: 2.5rem;
+        }
+        @include forsize(small){
+            font-size: 2.1rem;
+            line-height: 2.4rem;
+        }
+    }
+    
+    &__size60{
+        font-size: 3.4rem;
+        line-height: 3.7rem;
+    }
+
+    &__center{
+        text-align: center;
+    }
+    &__right{
+        text-align: right;
+    }
+}
+
+.Button{
+    position: relative;
+    cursor: pointer;
+    display: block;
+    padding: 15px 40px;
+    font-weight: 100;
+    width: 260px;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    border-radius: 5px;
+    border: none;
+
+    @include forsize(medium){
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        padding: 15px 20px;
+    }
+    @include forsize(mediumsmall){
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        padding: 15px 20px;
+    }
+    @include forsize(small){
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        padding: 15px 25px;
+    }
+}
+    
+.Button__blue{
+    background: $blue;
+    color: white;
+    box-shadow: 0px 1px 0px 0px #266B7E;
+
+    &:hover{
+        top: -1px;
+        box-shadow: 0px 2px 0px 0px #266B7E;
+
+    }
+}
+    
+.Button__orange{
+    background: $orange;
+    color: white;
+    box-shadow: 0px 1px 0px 0px #96391C;
+
+    &:hover{
+        top: -1px;
+        box-shadow: 0px 2px 0px 0px #96391C;
+
+    }
+}
+
+.Button__wide{
+    width: auto;
+}
+
+.numBack1{
+    min-height: 255px;
+    background: url('../images/num1.svg') no-repeat center center;
+}
+.numBack2{
+    min-height: 255px;
+    background: url('../images/num2.svg') no-repeat center center;
+}
+.numBack3{
+    min-height: 255px;
+    background: url('../images/num3.svg') no-repeat center center;
+}
+
+.Input{
+    width: 100%;
+    background: white;
+    border: 1px solid $blue;
+    color: $textGrey;
+    font-size: 1.2rem;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+.Input__select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('../images/select.svg') no-repeat right 10px center white; 
+}

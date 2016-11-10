@@ -1,0 +1,25 @@
+.Header{
+    background-image: url('../images/headerImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.Header__fader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0.00) 28%, #FFFFFF 100%);
+    background-image: -o-linear-gradient(left, rgba(255,255,255,0.00) 28%, #FFFFFF 100%);
+    background-image: linear-gradient(to left, rgba(255,255,255,0.00) 28%, #FFFFFF 100%);
+}
+
+.Logo{
+    z-index: 100;
+    position: relative;
+}
+
+.Quote{
+    background: url('../images/bigQuote.svg') no-repeat;
+}

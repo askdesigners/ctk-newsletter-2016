@@ -1,0 +1,78 @@
+.ModalWrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.60);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    z-index: 10000;
+    display: none;
+    overflow-y: auto;
+
+    @include forsize(mediumsmall){
+        padding-top: 20px; 
+    }
+    @include forsize(small){
+        padding-top: 20px; 
+    }
+}
+
+.Modal__form{
+    position: relative;
+    max-width: 680px;
+    height: auto;
+    width: 95vw;
+    border-radius: 5px;
+    align-self: center;
+
+    @include forsize(medium){
+        width: 80vw;
+    }
+    
+}
+
+.FormBody{
+    overflow-y: auto;
+    padding-bottom: $pad * 2;
+}
+
+#ContactForm{
+    position: relative;
+    transition: opacity 0.5s;
+    z-index: 100;
+}
+
+.Closer{
+    position: absolute;
+    background: url('../images/closer.svg') no-repeat center center;
+    height: 29px;
+    width: 29px;
+    right: $pad;
+    top: $pad;
+    cursor: pointer;
+}
+
+.ConfirmationMessage{
+    opacity: 0;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    transition: opacity 0.5s;
+}
+
+.complete{
+    .ConfirmationMessage{
+        opacity: 1;
+    }
+    #ContactForm{
+        opacity: 0;
+    }
+}

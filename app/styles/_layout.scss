@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+}
+img{
+    display: inherit;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+
+    &.modalOpen{
+        overflow: hidden;
+    }
+}
+
+.Section {
+
+    &__flexRow{
+        position: relative;
+        display: block;
+        @include forsize(medium){
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+.Col{
+
+    &__1{
+        width: 100%;
+        @include forsize(medium){
+            width: $col;
+        }
+    }
+    &__2{
+        width: 100%;
+        @include forsize(medium){
+            width: $col * 2;
+        }
+    }
+    &__3{
+        width: 100%;
+        @include forsize(medium){
+            width: $col * 3;
+        }
+    }
+    &__4{
+        width: 100%;
+        @include forsize(medium){
+            width: $col * 4;
+        }
+    }
+    &__5{
+        width: 100%;
+        @include forsize(medium){
+            width: $col * 5;
+        }
+    }
+    &__6{
+        width: 100%;
+        @include forsize(medium){
+            width: $col * 6;
+        }
+    }
+}
+
+.centerMargin{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.centerVertical{
+    justify-content: center;
+    align-items: center;
+}
+
+.alignRight{
+    justify-content: center;
+    align-items: flex-end;
+
+    @include forsize(large){
+        align-items: flex-start;
+    }
+}
+
+.centerHorizontal{
+    align-self: center;
+}
+
+.flex{
+    display: flex;
+}
+
+.flexCol{
+    flex-direction: column;
+}
+
+.padRight{
+    padding-right: $pad;
+}
+.padLeft{
+    padding-left: $pad;
+}
+.padSides{
+    padding-right: $pad;
+    padding-left: $pad;
+}
+
+.padTopBottom{
+    padding-bottom: $pad;
+    padding-top: $pad;
+}
+
+.padTop{
+    padding-top: $pad;
+}
+
+.padTopBottomLarge{
+    padding-bottom: $pad * 4;
+    padding-top: $pad * 4;
+}
+
+.padTopLarge{
+    padding-top: $pad * 4;
+}
+
+.whenNarrowPadTopBottomLarge{
+    @include forsize(mediumsmall){
+        padding-top: $pad * 4;
+        padding-bottom: $pad * 4;
+    }
+    @include forsize(small){
+        padding-top: $pad * 4;
+        padding-bottom: $pad * 4;
+    }
+}
+
+.whenNarrowPadBottomLarge{
+    @include forsize(mediumsmall){
+        padding-bottom: $pad * 4;
+    }
+    @include forsize(small){
+        padding-bottom: $pad * 4;
+    }
+}
+
+.whenNarrowPadBottom{
+    @include forsize(mediumsmall){
+        padding-bottom: $pad * 2;
+    }
+    @include forsize(small){
+        padding-bottom: $pad * 2;
+    }
+}
+
+.padTopMid{
+    padding-top: $pad * 2;
+}
+
+.padSidesMid{
+    padding-right: $pad * 2;
+    padding-left: $pad * 2;
+}
+
+.padSidesLarge{
+    padding-right: $pad * 2;
+    padding-left: $pad * 2;
+
+    @include forsize(medium){
+        padding-right: $pad * 4;
+        padding-left: $pad * 4;
+    }
+}
+
+.marginBottom{
+    margin-bottom: $pad;
+}
+
+.marginTop{
+    margin-top: $pad;
+}
+
+.marginTopDouble{
+    margin-top: $pad * 2;
+}
+
+.marginBottomDouble{
+    margin-bottom: $pad * 2;
+}
+
+.pullUp{
+    @include forsize(medium){
+        margin-top: -20px;
+    }
+}
+
+.z100{
+    z-index: 100;
+    position: relative;
+}
+
+.z200{
+    z-index: 200;
+    position: relative;
+}
+
+.background{
+    &Blue{
+        background: $blue;
+    }
+    &Lightblue{
+        background: $lightblue;
+    }
+    &Orange{
+        background: $orange;
+    }
+    &Midgrey{
+        background: $midGrey;
+    }
+    &Lightgrey{
+        background: $lightGrey;
+    }
+    &Wormygrey{
+        background: url('../images/wormy.png') repeat-x center center;
+        background-size: cover;
+    }
+    &White{
+        background: white;
+    }
+}
+
+.maxWidth450{
+    max-width: 450px;
+}
+
+.maxWidth600{
+    max-width: 600px;
+}
+
+.maxWidth700{
+    max-width: 700px;
+}
+
+.fullWidth{
+    width: 100%;
+}
+
+.hideOverflow{
+    overflow: hidden;
+}
+
+.whenNarrowHideOverflow{
+    @include forsize(medium){
+        overflow: hidden;
+    }
+    @include forsize(small){
+        overflow: hidden;
+    }
+}
+
+.whenWideOrder2{
+    order: 2;
+}
+
+.whenNarrowPushDown{
+    top: 30px;
+    position: relative;
+    
+    @include forsize(medium){
+        top: 0;
+    }
+}
+
+.whenNarrowPullLeft{
+    left: 10vw;
+    position: relative;
+    
+    @include forsize(medium){
+        left: 0;
+    }
+}
