@@ -119,7 +119,7 @@ gulp.task('scripts', () =>
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
       './app/scripts/ScrollMagic.min.js',
-      './app/scripts/plugins/debug.addIndicators.js',
+      './app/scripts/debug.addIndicators.js',
       './app/scripts/main.js'
       // Other scripts
     ])
