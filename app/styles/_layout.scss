@@ -24,6 +24,10 @@ body{
             flex-direction: row;
         }
     }
+
+    &.borderTop{
+        border-top: 1px solid $blue;
+    }
 }
 
 .Col{
@@ -97,6 +101,10 @@ body{
     flex-direction: column;
 }
 
+.flexCenter{
+    justify-content: center;
+}
+
 .padRight{
     padding-right: $pad;
 }
@@ -113,6 +121,11 @@ body{
     padding-top: $pad;
 }
 
+.padTopBottomMicro{
+    padding-bottom: $pad / 2;
+    padding-top: $pad / 2;
+}
+
 .padTop{
     padding-top: $pad;
 }
@@ -124,6 +137,18 @@ body{
 
 .padTopLarge{
     padding-top: $pad * 4;
+}
+
+.padTopMega{
+    padding-top: $pad * 6;
+}
+
+.padTopUltraMega{
+    padding-top: 70vh;
+}
+
+.padBottomLarge{
+    padding-bottom: $pad * 4;
 }
 
 .whenNarrowPadTopBottomLarge{
@@ -174,6 +199,14 @@ body{
     }
 }
 
+.marginRight{
+    margin-right: $pad;
+}
+
+.marginLeft{
+    margin-left: $pad;
+}
+
 .marginBottom{
     margin-bottom: $pad;
 }
@@ -207,8 +240,8 @@ body{
 }
 
 .background{
-    &Blue{
-        background: $blue;
+    &BlueGradient{
+        background: $blueGradient
     }
     &Lightblue{
         background: $lightblue;
@@ -229,18 +262,56 @@ body{
     &White{
         background: white;
     }
+    &WhiteTrans{
+        background: $whiteTrans;
+    }
+    &BlueTrans{
+        background-image: linear-gradient(-50deg, rgba(166,195,236,0.90) 17%, rgba(56,112,190,0.90) 92%);
+    }
+    &GreyGradient{
+        background-image: linear-gradient(44deg, #636363 0%, #272727 100%);
+    }
+    &CoffeeFade{
+        background: url('../images/CoffeeFade.jpg') no-repeat;
+        background-size: cover;
+    }
+    &Webfoto{
+        background: url('../images/webfoto.jpeg') no-repeat;
+        background-size: cover;
+    }
+    &Infographic{
+        background: url('../images/infographics.jpg') no-repeat;
+        background-size: cover;
+    }
+    &Academy{
+        background: url('../images/akademie.jpeg') no-repeat;
+        background-size: cover;
+    }
+    &Vondrous{
+        background: url('../images/vondrous.jpeg') no-repeat;
+        background-size: cover;
+    }
+    &Students{
+        background: url('../images/students.jpeg') no-repeat;
+        background-size: cover;
+    }
+}
+
+.smokeBox{
+    padding: $pad *2;
+    background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.7) 0%, rgba(29, 83, 155, 0.7) 100%);
 }
 
 .maxWidth450{
     max-width: 450px;
 }
 
-.maxWidth600{
-    max-width: 600px;
+.maxWidth660{
+    max-width: 660px;
 }
 
-.maxWidth700{
-    max-width: 700px;
+.maxWidth980{
+    max-width: 980px;
 }
 
 .fullWidth{
@@ -280,4 +351,74 @@ body{
     @include forsize(medium){
         left: 0;
     }
+}
+
+.bottomBorder{
+    padding-bottom: $pad;
+    border-bottom: 1px solid $blue;
+}
+
+.bottomBorderFat{
+    border-bottom: 3px solid $blue;
+}
+
+.Image{
+    display: inline-block;
+
+    &__fitWidth{
+        max-width: 100%;
+    }
+
+    &.withShadow{
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    }
+
+    &.pullLeft{
+        margin-left: 0;
+        float: none;
+        
+        @include forsize(medium){
+            float: left;
+            margin-left: -($col*3);
+        }
+    }
+    
+    &.floatLeft{
+        float: none;
+        
+        @include forsize(medium){
+            float: left;
+        }
+    }
+
+    &.askLogo{
+        width: 129px;
+        height: 24px;
+        margin-left: 10px;
+    }
+}
+
+.BackgroundImage{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -10;
+}
+
+.turnLeft{
+    transform: rotate(1deg);
+}
+
+.turnRight{
+    transform: rotate(-1deg);
+}
+
+.Table{
+
+    th{
+        font-size: 0.8rem;
+        line-height: 1rem;
+        font-weight: 100;
+    }
+
 }

@@ -1,21 +1,60 @@
+@font-face {
+    font-family: 'Maxima';
+    src: url('../fonts/maximalight-webfont.eot');
+    src: url('../fonts/maximalight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maximalight-webfont.woff2') format('woff2'),
+         url('../fonts/maximalight-webfont.woff') format('woff'),
+         url('../fonts/maximalight-webfont.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+ 
+@font-face {
+    font-family: 'Maxima';
+    src: url('../fonts/maximatot-med-webfont.eot');
+    src: url('../fonts/maximatot-med-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maximatot-med-webfont.woff2') format('woff2'),
+         url('../fonts/maximatot-med-webfont.woff') format('woff'),
+         url('../fonts/maximatot-med-webfont.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maxima';
+    src: url('../fonts/maximabold-webfont.eot');
+    src: url('../fonts/maximabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/maximabold-webfont.woff2') format('woff2'),
+         url('../fonts/maximabold-webfont.woff') format('woff'),
+         url('../fonts/maximabold-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 html {
-    font-family: "GT Pressura", Helvetica, Arial, sans-serif; 
+    font-family: "Maxima", Helvetica, Arial, sans-serif; 
+    font-weight: 100;
 }
 
 body{
-    font-size: 15px;
+    font-size: 21px;
+    line-height: 28px;
+}
+
+a{
+    color: $blue;
 }
 .Text{
-    &__regular{
-        font-weight: 300;
-    }
-    
     &__light{
         font-weight: 100;
     }
     
+    &__regular{
+        font-weight: 200;
+    }
+    
     &__bold{
-        font-weight: 700;
+        font-weight: 400;
     }
 
     &__color{
@@ -30,37 +69,74 @@ body{
         }
     }
 
-    &__size30{
-        font-size: 1.8rem;
-        line-height: 2.3rem;
+    &__size15{
+        font-size: 0.9rem;
+        
+        @include forsize(small){
+            line-height: 1.1rem;
+        }
+    }
+
+    &__size18{
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+    }
+
+    &__size21{
+        font-size: 1.3rem;
+        line-height: 1.8rem;
 
         @include forsize(mediumsmall){
-            font-size: 1.6rem;
-            line-height: 2.1rem;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
         }
         @include forsize(small){
-            font-size: 1.6rem;
-            line-height: 2.2rem;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
         }
     }
     
-    &__size40{
-        font-size: 2.4rem;
-        line-height: 2.7rem;
-        
+    &__size24{
+        font-size: 1.5rem;
+        line-height: 2rem;
+
         @include forsize(mediumsmall){
-            font-size: 2.2rem;
-            line-height: 2.5rem;
+            font-size: 1.3rem;
+            line-height: 1.8rem;
         }
         @include forsize(small){
-            font-size: 2.1rem;
-            line-height: 2.4rem;
+            font-size: 1.3rem;
+            line-height: 1.8rem;
         }
     }
     
-    &__size60{
+    &__size28{
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+
+        @include forsize(mediumsmall){
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+        @include forsize(small){
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+    
+    &__size55{
         font-size: 3.4rem;
-        line-height: 3.7rem;
+        line-height: 3.8rem;
+    }
+   
+    &__size75{
+        font-size: 4.7rem;
+        line-height: 5.2rem;
+    }
+    
+    &__size110{
+        font-size: 6.9rem;
+        line-height: 7.3rem;
     }
 
     &__center{
@@ -68,6 +144,25 @@ body{
     }
     &__right{
         text-align: right;
+    }
+    &__left{
+        text-align: left;
+    }
+}
+
+.Ender{
+    width: 7px;
+    height: 7px;
+    background: $blue;
+    display: inline-block;
+    margin-left: 10px;
+    top: -2px;
+    position: relative;
+
+    &.onNewline{
+        display: block;
+        margin-left: 0;
+        top: 0;
     }
 }
 
