@@ -71,17 +71,35 @@
         console.error('Error during service worker registration:', e);
       });
   }
-  $(function(){
+  $(function () {
+    
+    var controller = new ScrollMagic.Controller();
 
-  var controller = new ScrollMagic.Controller();
+    var section3 = new ScrollMagic.Scene({triggerElement: "#section3", triggerHook: 0, loglevel: 3});
+    section3.setPin("#section3Sticky") // pins the element for the the scene's duration
+    section3.addTo(controller); // assign the scene to the controller
+   
+    var section4 = new ScrollMagic.Scene({triggerElement: "#section4", triggerHook: 0, loglevel: 3});
+    section4.setPin("#section4Sticky") // pins the element for the the scene's duration
+    section4.addTo(controller); // assign the scene to the controller
+   
+    var section6 = new ScrollMagic.Scene({triggerElement: "#section6", triggerHook: 0, loglevel: 3});
+    section6.setPin("#section6Sticky") // pins the element for the the scene's duration
+    section6.addTo(controller); // assign the scene to the controller
+   
+    var section7 = new ScrollMagic.Scene({triggerElement: "#section7", triggerHook: 0, loglevel: 3});
+    section7.setPin("#section7Sticky") // pins the element for the the scene's duration
+    section7.addTo(controller); // assign the scene to the controller
+   
+    var section8 = new ScrollMagic.Scene({triggerElement: "#section8", triggerHook: 0, loglevel: 3});
+    section8.setPin("#section8Sticky") // pins the element for the the scene's duration
+    section8.addTo(controller); // assign the scene to the controller
+   
+    var section9 = new ScrollMagic.Scene({triggerElement: "#section9", triggerHook: 0, loglevel: 3});
+    section9.setPin("#section9Sticky") // pins the element for the the scene's duration
+    section9.addTo(controller); // assign the scene to the controller
 
-  // create a scene
-  new ScrollMagic.Scene({
-    duration: 100,    // the scene should last for a scroll distance of 100px
-    offset: 50        // start this scene after scrolling for 50px
-  })
-    .setPin("#my-sticky-element") // pins the element for the the scene's duration
-    .addTo(controller); // assign the scene to the controller
+
   });
-  
+
 })();
