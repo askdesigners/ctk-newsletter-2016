@@ -72,8 +72,30 @@
       });
   }
   $(function () {
+
+    function scrollToAnchor(ID){
+        var aTag = $("#"+ ID);
+        $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+    }
+
+    $('.indexBlock').on('click', function(e){
+      scrollToAnchor($(this).data('scrollto'));
+    });
+    
+    $('#backToTop').on('click', function(e){
+      scrollToAnchor('sectionIntro');
+    });
+
     
     var controller = new ScrollMagic.Controller();
+
+    var toTop = new ScrollMagic.Scene({triggerElement: "#backToTop", triggerHook: 0, loglevel: 3});
+    toTop.setPin("#backToTop") // pins the element for the the scene's duration
+    toTop.addTo(controller); // assign the scene to the controller
+
+    var section1 = new ScrollMagic.Scene({triggerElement: "#section1", triggerHook: 0, loglevel: 3});
+    section1.setPin("#section1Sticky") // pins the element for the the scene's duration
+    section1.addTo(controller); // assign the scene to the controller
 
     var section3 = new ScrollMagic.Scene({triggerElement: "#section3", triggerHook: 0, loglevel: 3});
     section3.setPin("#section3Sticky") // pins the element for the the scene's duration
