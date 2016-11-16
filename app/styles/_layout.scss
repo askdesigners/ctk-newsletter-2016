@@ -8,14 +8,79 @@ img{
 body{
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 
-    &.modalOpen{
-        overflow: hidden;
+}
+.header{
+    z-index: 1000;
+    position: relative;
+}
+
+.logo{
+    max-width: 100%;
+}
+
+.indexBlock{
+    min-height: 185px;
+    cursor: pointer;
+    position: relative;
+    padding-right: 50px !important;
+    overflow: hidden;
+
+    &:before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        min-height: 185px;
+        position: absolute;
+        background: $blue;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.3s;
     }
+    .readMore{
+        position: absolute;
+        right: 0;
+        transition: transform 0.1s ease-in-out;
+        z-index: 100;
+        
+        @include forsize(medium){
+            transform: translateX(40px);
+        }
+    }
+    h1{
+        z-index: 100;
+    }
+    &:hover{
+        &:before{
+            opacity: 0.5;
+        }
+        .readMore{
+            transform: translateX(0px);
+        }
+    }
+
+}
+
+#backToTop{
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    display: inline-block;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    z-index: 100;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .Section {
-
+    width: 100%;
     &__flexRow{
         position: relative;
         display: block;
@@ -103,6 +168,21 @@ body{
 
 .flexCenter{
     justify-content: center;
+}
+
+.flexBetween{
+    justify-content: space-between;
+}
+
+.whenWideFlex{
+    display: flex;  
+
+    @include forsize(mediumsmall){
+        display: block;
+    }
+    @include forsize(small){
+        display: block;
+    }
 }
 
 .padRight{
@@ -243,8 +323,8 @@ body{
     &BlueGradient{
         background: $blueGradient
     }
-    &Lightblue{
-        background: $lightblue;
+    &Blue{
+        background: $blue;
     }
     &Orange{
         background: $orange;
@@ -254,10 +334,6 @@ body{
     }
     &Lightgrey{
         background: $lightGrey;
-    }
-    &Wormygrey{
-        background: url('../images/wormy.png') repeat-x center center;
-        background-size: cover;
     }
     &White{
         background: white;
@@ -271,35 +347,106 @@ body{
     &GreyGradient{
         background-image: linear-gradient(44deg, #636363 0%, #272727 100%);
     }
-    &CoffeeFade{
-        background: url('../images/CoffeeFade.jpg') no-repeat;
+    &Director{
+        background: url('../images/director.jpg') no-repeat;
         background-size: cover;
+
+        &Tn{
+            background: url('../images/directorTn.jpg') no-repeat;
+            background-size: cover;
+        }
+    }
+    &CoffeeFade{
+        background: url('../images/coffeeFade.jpg') no-repeat;
+        background-size: cover;
+
+        &Tn{
+            background: url('../images/coffeeFadeTn.jpg') no-repeat;
+            background-size: cover;
+        }
     }
     &Webfoto{
-        background: url('../images/webfoto.jpeg') no-repeat;
+        background: url('../images/webfoto.jpg') no-repeat;
         background-size: cover;
+
+        &Tn{
+            background: url('../images/webfotoTn.jpg') no-repeat;
+            background-size: cover;
+        }
+    }
+    &Fotobanka{
+        background: white;
+
+        &Tn{
+            background: url('../images/fotobankaTn.jpg') no-repeat;
+            background-size: cover;
+        }
     }
     &Infographic{
         background: url('../images/infographics.jpg') no-repeat;
         background-size: cover;
+
+        &Tn{
+            background: url('../images/infographicsTn.jpg') no-repeat;
+            background-size: cover;
+        }
     }
     &Academy{
-        background: url('../images/akademie.jpeg') no-repeat;
+        background: url('../images/akademie.jpg') no-repeat;
         background-size: cover;
+
+        &Tn{
+            background: url('../images/akademieTn.jpg') no-repeat;
+            background-size: cover;
+        }
     }
     &Vondrous{
-        background: url('../images/vondrous.jpeg') no-repeat;
+        background: url('../images/vondrous.jpg') no-repeat;
         background-size: cover;
+
+        &Tn{
+            background: url('../images/vondrousTn.jpg') no-repeat;
+            background-size: cover;
+        }
     }
     &Students{
-        background: url('../images/students.jpeg') no-repeat;
+        background: url('../images/students.jpg') no-repeat;
         background-size: cover;
+
+        &Tn{
+            background: url('../images/studentsTn.jpg') no-repeat;
+            background-size: cover;
+        }
     }
 }
 
 .smokeBox{
     padding: $pad *2;
     background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.7) 0%, rgba(29, 83, 155, 0.7) 100%);
+}
+
+.noWrap{
+    white-space: nowrap;
+}
+
+.widthHalf{
+    width: 50%;
+    
+    @include forsize(small){
+        width: 40%;
+    }
+}
+
+.widthTenth{
+    width: 10%;
+    
+    @include forsize(small){
+        width: 12%;
+    }
+}
+
+.maxWidthHalf{
+    max-width: 50%;
 }
 
 .maxWidth450{
@@ -320,6 +467,15 @@ body{
 
 .hideOverflow{
     overflow: hidden;
+}
+
+.whenNarrowHide{
+    @include forsize(medium){
+        display: none;
+    }
+    @include forsize(small){
+        display: none;
+    }
 }
 
 .whenNarrowHideOverflow{
@@ -403,6 +559,7 @@ body{
     height: 100vh;
     width: 100%;
     z-index: -10;
+    background-position: center center;
 }
 
 .turnLeft{
@@ -421,4 +578,8 @@ body{
         font-weight: 100;
     }
 
+}
+
+.scrollmagic-pin-spacer{
+    z-index: -1;
 }

@@ -80,6 +80,11 @@ a{
     &__size18{
         font-size: 1.1rem;
         line-height: 1.3rem;
+
+        @include forsize(small){
+            font-size: 0.8rem;
+            line-height: 1rem;
+        }
     }
 
     &__size21{
@@ -124,19 +129,59 @@ a{
         }
     }
     
+    &__size35{
+        font-size: 2rem;
+        line-height: 2.2rem;
+
+        @include forsize(mediumsmall){
+            font-size: 1.8rem;
+            line-height: 2.1rem;
+        }
+        @include forsize(small){
+            font-size: 1.8rem;
+            line-height: 2.1rem;
+        }
+    }
     &__size55{
         font-size: 3.4rem;
         line-height: 3.8rem;
+
+        @include forsize(mediumsmall){
+            font-size: 2.5rem;
+            line-height: 2.7rem;
+        }
+        @include forsize(small){
+            font-size: 2.5rem;
+            line-height: 2.7rem;
+        }
     }
    
     &__size75{
         font-size: 4.7rem;
         line-height: 5.2rem;
+
+        @include forsize(mediumsmall){
+            font-size: 3.4rem;
+            line-height: 3.8rem;
+        }
+        @include forsize(small){
+            font-size: 3.4rem;
+            line-height: 3.8rem;
+        }
     }
     
     &__size110{
         font-size: 6.9rem;
         line-height: 7.3rem;
+
+        @include forsize(mediumsmall){
+            font-size: 5rem;
+            line-height: 5.2rem;
+        }
+        @include forsize(small){
+            font-size: 3.4rem;
+            line-height: 3.8rem;
+        }
     }
 
     &__center{
@@ -155,7 +200,7 @@ a{
     height: 7px;
     background: $blue;
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 2px;
     top: -2px;
     position: relative;
 
