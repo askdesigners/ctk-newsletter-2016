@@ -509,6 +509,14 @@ body{
     }
 }
 
+.whenNarrowMarginBottom{
+    margin-bottom: $pad;
+    
+    @include forsize(medium){
+        margin-bottom: inherit;
+    }
+}
+
 .bottomBorder{
     padding-bottom: $pad;
     border-bottom: 1px solid $blue;
@@ -542,9 +550,11 @@ body{
     
     &.floatLeft{
         float: none;
+        display: block;
         
         @include forsize(medium){
             float: left;
+            display: inline-block;
         }
     }
 
