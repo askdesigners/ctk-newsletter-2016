@@ -18,7 +18,7 @@ body{
 
 .logo{
     max-width: 100%;
-}
+}   
 
 .indexBlock{
     min-height: 185px;
@@ -520,6 +520,7 @@ body{
 
 .Image{
     display: inline-block;
+    max-width: 100%;
 
     &__fitWidth{
         max-width: 100%;

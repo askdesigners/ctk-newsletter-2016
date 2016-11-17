@@ -165,8 +165,8 @@ a{
             line-height: 3.8rem;
         }
         @include forsize(small){
-            font-size: 3.4rem;
-            line-height: 3.8rem;
+            font-size: 3rem;
+            line-height: 3.5rem;
         }
     }
     
@@ -179,8 +179,8 @@ a{
             line-height: 5.2rem;
         }
         @include forsize(small){
-            font-size: 3.4rem;
-            line-height: 3.8rem;
+            font-size: 3rem;
+            line-height: 3.5rem;
         }
     }
 
