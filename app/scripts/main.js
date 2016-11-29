@@ -97,6 +97,10 @@
     section1.setPin("#section1Sticky") // pins the element for the the scene's duration
     section1.addTo(controller); // assign the scene to the controller
 
+    var section2 = new ScrollMagic.Scene({triggerElement: "#section2", triggerHook: 0, loglevel: 3});
+    section2.setPin("#section2Sticky") // pins the element for the the scene's duration
+    section2.addTo(controller); // assign the scene to the controller
+
     var section3 = new ScrollMagic.Scene({triggerElement: "#section3", triggerHook: 0, loglevel: 3});
     section3.setPin("#section3Sticky") // pins the element for the the scene's duration
     section3.addTo(controller); // assign the scene to the controller

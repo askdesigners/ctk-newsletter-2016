@@ -356,6 +356,15 @@ body{
             background-size: cover;
         }
     }
+    &NewFormats{
+        background: url('../images/newFormats.jpg') no-repeat;
+        background-size: cover;
+
+        &Tn{
+            background: url('../images/formatsTn.jpg') no-repeat;
+            background-size: cover;
+        }
+    }
     &CoffeeFade{
         background: url('../images/coffeeFade.jpg') no-repeat;
         background-size: cover;
